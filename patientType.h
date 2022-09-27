@@ -78,9 +78,9 @@ public:
    // Failing to fulfill above conditions should return false else true
 
 private:
-   string ID;            // variable to store the ID
-   dateType dateOfBirth; // composition; With dateOfBirth object you
-                         // can access dateType functions
+   string ID;                     // variable to store the ID
+   dateType dateOfBirth;          // composition; With dateOfBirth object you
+                                  // can access dateType functions
    doctorType attendingPhysicain; // composition;  With dateOfBirth
                                   // object you can access dateType functions
 };
