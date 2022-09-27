@@ -1,5 +1,5 @@
 /*
-Name: KISHORE CHIDELLA, NSHE: ABC123, CLASS-SECTION: CS202, ASSIGNMENT:3
+Name: Brian Nieh, NSHE: 5008139573, CLASS-SECTION: 1005, ASSIGNMENT:3
 Description: To set the patients and doctors data; print the bill of a
 patient
 Input: Develop personType class that can be useful to set first and last
