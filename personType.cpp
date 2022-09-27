@@ -14,26 +14,31 @@ check the sample output for reference
 */
 #include <iostream>
 #include "personType.h"
-
+// Creates an object that has a first and last name
+//  the parameters are initialized to empty strings
 personType::personType(string first = "", string last = "")
 {
     firstName = first;
     lastName = last;
 }
-
+// sets the first and last name from the paramters
 void personType::setName(string first, string last)
 {
     firstName = first;
     lastName = last;
 }
-
+// returns first name
 string personType::getFirstName() const
 {
+    return firstName;
 }
-
+// returns last name
 string personType::getLastName() const
 {
+    return lastName;
 }
+// prints first and last name in that order
 void personType::print() const
 {
+    cout << firstName << " " << lastName << '\n';
 }
