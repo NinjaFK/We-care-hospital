@@ -19,6 +19,10 @@ check the sample output for reference
 // have to be initialized; no need to initialize pType here
 billType::billType()
 {
+    ID = "a12345";
+    pharmacyCharges = 0.0;
+    roomRent = 0.0;
+    doctorFee = 0.0;
 }
 // Parameterized Constructor
 // The member variables ID, pharmacyCharges, roomRent, doctorFee,
@@ -27,6 +31,11 @@ billType::billType()
 billType::billType(string id, double phCharges, double rRent,
                    double docFee, patientType patientObj)
 {
+    ID = id;
+    pharmacyCharges = phCharges;
+    roomRent = rRent;
+    doctorFee = docFee;
+    pType = patientObj;
 }
 // Function to setInfo of a bill
 // The member variables ID, pharmacyCharges, roomRent, doctorFee,
@@ -34,22 +43,35 @@ billType::billType(string id, double phCharges, double rRent,
 void billType::setInfo(string id, double phCharges, double rRent,
                        double docFee)
 {
+    ID = id;
+    pharmacyCharges = phCharges;
+    roomRent = rRent;
+    doctorFee = docFee;
 }
 // Function to setID according to the parameter
 void billType::setID(string id)
 {
+    ID = id;
 }
 // Function to return pharmacyCharges + roomRent + doctorFee
 double billType::billingAmount()
 {
+    return pharmacyCharges + roomRent + doctorFee;
 }
 // Function to return the ID.
 string billType::getID()
 {
+    return ID;
 }
 // Function to output the first name and last name using pType obj
 // Function to output Billing details like ID, pharmacyCharges,
 // roomRent, doctorFee and finally total charges
 void billType::printBill()
 {
+    cout << pType.getFirstName() << " "
+         << pType.getLastName() << " "
+         << pharmacyCharges << " "
+         << roomRent << " "
+         << doctorFee << " "
+         << billingAmount() << "\n";
 }
