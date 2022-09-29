@@ -96,6 +96,14 @@ void patientType::setID(string id)
 // if none given they are set to the above default values
 void patientType::setBirthDate(int bDay = 1, int bMth = 1, int bYear = 1910)
 {
+    if (bMth < 1 || bMth > 12)
+    {
+        cout << "Error: Invalid setmonth entry for " << getFirstName() << '\n';
+    }
+    if (bYear < 1910 || bYear > 2022)
+    {
+        cout << "Error: Invalid setyear entry for " << getFirstName() << '\n';
+    }
     dateOfBirth.setDate(bMth, bDay, bYear);
 }
 // Function to set the doctor's first name and last name
