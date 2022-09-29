@@ -16,7 +16,7 @@ check the sample output for reference
 #include "personType.h"
 // Creates an object that has a first and last name
 //  the parameters are initialized to empty strings
-personType::personType(string first = "", string last = "")
+personType::personType(string first, string last)
 {
     firstName = first;
     lastName = last;
