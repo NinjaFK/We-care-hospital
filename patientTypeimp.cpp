@@ -93,3 +93,26 @@ void patientType::print() const
          << attendingPhysicain.getSpecialty() << " "
          << '\n';
 }
+// Function to check patientID; It has totally 6 characters;
+// First character is upper case alphabet; Characters from 2 to 6
+// can be digits from 0 to 9;
+// Failing to fulfill above conditions should return false else true
+bool patientType::checkPatientID(string patientIDTmp) const
+{
+    if (patientIDTmp.size() != 6)
+    {
+        return 0;
+    }
+    if (patientIDTmp[0] < 65 || patientIDTmp[0] > 90)
+    {
+        return 0;
+    }
+    for (int i = 1; i < 6; i++)
+    {
+        if (patientIDTmp[i] < 48 || patientIDTmp[i] > 57)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
