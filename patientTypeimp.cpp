@@ -14,6 +14,7 @@ check the sample output for reference
 */
 #include <iostream>
 #include "patientType.h"
+#include "dateType.h"
 
 // Parameterized Constructor
 // The patient details like ID, first name, last name,
@@ -23,6 +24,9 @@ patientType::patientType(string id = "", string fName = "", string lName = "",
                          int bDay = 1, int bMth = 1, int bYear = 1910,
                          string docFrName = "", string docLaName = "", string docSpl = "")
 {
+    ID = id;
+    setName(fName, lName);
+    dateOfBirth = dateType(bMth, bDay, bYear);
 }
 // Function to setInfo of a patient
 // The patient details like ID, first name, last name,
