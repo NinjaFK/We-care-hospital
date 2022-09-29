@@ -34,5 +34,7 @@ string doctorType::getSpecialty() const
 // Function to output the doctor's first name, last name and specialty
 void doctorType::print() const
 {
-    cout << getFirstName() << ", " << getLastName << specialty << '\n';
+    string fName = getFirstName();
+    string lName = getLastName();
+    cout << fName << ", " << lName << specialty << '\n';
 }

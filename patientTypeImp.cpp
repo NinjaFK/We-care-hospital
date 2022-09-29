@@ -94,7 +94,7 @@ void patientType::setID(string id)
 // Function to set the birthDate.
 // bDay, bMth, bYear are set according to the parameters.
 // if none given they are set to the above default values
-void patientType::setBirthDate(int bDay = 1, int bMth = 1, int bYear = 1910)
+void patientType::setBirthDate(int bDay, int bMth, int bYear)
 {
     if (bMth < 1 || bMth > 12)
     {
@@ -108,12 +108,12 @@ void patientType::setBirthDate(int bDay = 1, int bMth = 1, int bYear = 1910)
 }
 // Function to set the doctor's first name and last name
 // according to the parameters.
-void patientType::setDoctorName(string fName = "", string lName = "")
+void patientType::setDoctorName(string fName, string lName)
 {
     attendingPhysicain.setName(fName, lName);
 }
 // Function to set the doctor's specialty according to the parameter
-void patientType::setDoctorSpl(string spl = "")
+void patientType::setDoctorSpl(string spl)
 {
     attendingPhysicain.setSpecialty(spl);
 }
@@ -137,8 +137,10 @@ string patientType::getDoctorFName() const
 // using doctorType object(attendingPhysicain)
 void patientType::print() const
 {
-    cout << getFirstName() << " "
-         << getLastName << " "
+    string fName = getFirstName();
+    string lName = getLastName();
+    cout << fName << " "
+         << lName << " "
          << attendingPhysicain.getFirstName() << " "
          << attendingPhysicain.getLastName() << " "
          << attendingPhysicain.getSpecialty() << " "
