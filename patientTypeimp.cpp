@@ -23,9 +23,27 @@ patientType::patientType(string id = "", string fName = "", string lName = "",
                          int bDay = 1, int bMth = 1, int bYear = 1910,
                          string docFrName = "", string docLaName = "", string docSpl = "")
 {
+    // checks if id is vaild and if not it says who
+    if (!checkPatientID(id))
+    {
+        cout << "Error: " << id << "  is invalid patientID for " << fName << '\n';
+    }
     ID = id;
     setName(fName, lName);
+    if (bMth < 1 || bMth > 12)
+    {
+        cout << "Error: Invalid month entry for " << getFirstName() << '\n';
+    }
+    if (bYear < 1910 || bYear > 2022)
+    {
+        cout << "Error: Invalid year entry for " << getFirstName() << '\n';
+    }
     dateOfBirth = dateType(bMth, bDay, bYear);
+    // checks if docpl has a value
+    if (docSpl == "")
+    {
+        cout << "Doctor Specialty is missing for patient " << fName << '\n';
+    }
     attendingPhysicain = doctorType(docFrName, docLaName, docSpl);
 }
 // Function to setInfo of a patient
@@ -37,16 +55,41 @@ void patientType::setInfo(string id = "", string fName = "", string lName = "",
                           string docFrName = "", string docLaName = "",
                           string docSpl = "")
 {
+    // checks if id is vaild and if not it says who
+    if (!checkPatientID(id))
+    {
+        cout << "Error: " << id << "  is invalid patientID for " << fName << '\n';
+    }
     ID = id;
     setName(fName, lName);
+    if (bMth < 1 || bMth > 12)
+    {
+        cout << "Error: Invalid month entry for " << getFirstName() << '\n';
+    }
+    if (bYear < 1910 || bYear > 2022)
+    {
+        cout << "Error: Invalid year entry for " << getFirstName() << '\n';
+    }
     dateOfBirth.setDate(bMth, bDay, bYear);
     attendingPhysicain.setName(docFrName, docLaName);
+    // checks if docpl has a value
+    if (docSpl == "")
+    {
+        cout << "Doctor Specialty is missing for patient " << fName << '\n';
+    }
     attendingPhysicain.setSpecialty(docSpl);
 }
 // Function to set the ID according to the parameter.
 void patientType::setID(string id)
 {
-    ID = id;
+    if (checkPatientID(id))
+    {
+        ID = id;
+    }
+    else
+    {
+        cout << "SetID invaild id" << '\n';
+    }
 }
 // Function to set the birthDate.
 // bDay, bMth, bYear are set according to the parameters.
