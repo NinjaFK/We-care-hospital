@@ -19,9 +19,9 @@ check the sample output for reference
 // The patient details like ID, first name, last name,
 // birthday(dd,mm,yr); doctor details like first name, last name,
 // specialty are set according to the parameters passed.
-patientType::patientType(string id = "", string fName = "", string lName = "",
-                         int bDay = 1, int bMth = 1, int bYear = 1910,
-                         string docFrName = "", string docLaName = "", string docSpl = "")
+patientType::patientType(string id, string fName, string lName,
+                         int bDay, int bMth, int bYear,
+                         string docFrName, string docLaName, string docSpl)
 {
     // checks if id is vaild and if not it says who
     if (!checkPatientID(id))
@@ -50,10 +50,10 @@ patientType::patientType(string id = "", string fName = "", string lName = "",
 // The patient details like ID, first name, last name,
 // birthday(dd,mm,yr); doctor details like first name, last name,
 // specialty are set according to the parameters passed.
-void patientType::setInfo(string id = "", string fName = "", string lName = "",
-                          int bDay = 1, int bMth = 1, int bYear = 1910,
-                          string docFrName = "", string docLaName = "",
-                          string docSpl = "")
+void patientType::setInfo(string id, string fName, string lName,
+                          int bDay, int bMth, int bYear,
+                          string docFrName, string docLaName,
+                          string docSpl)
 {
     // checks if id is vaild and if not it says who
     if (!checkPatientID(id))

@@ -16,7 +16,7 @@ check the sample output for reference
 #include "doctorType.h"
 // parameterized constructor
 // Sets firstName, lastName and specialty according to the parameters
-doctorType::doctorType(string first = "", string last = "", string spl = "")
+doctorType::doctorType(string first, string last, string spl)
 {
     setName(first, last);
     specialty = spl;

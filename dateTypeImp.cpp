@@ -17,7 +17,7 @@ check the sample output for reference
 // Constructor to set the date
 // The member variables dMonth, dDay, and dYear are set
 // according to the parameters.
-dateType::dateType(int month = 1, int day = 1, int year = 1910)
+dateType::dateType(int month, int day, int year)
 {
     dMonth = month;
     dDay = day;
