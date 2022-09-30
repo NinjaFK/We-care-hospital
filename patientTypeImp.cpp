@@ -139,11 +139,20 @@ void patientType::print() const
 {
     string fName = getFirstName();
     string lName = getLastName();
-    cout << fName << " "
-         << lName << " "
+    string stars;
+    string lines;
+    stars.append(65, '*');
+    lines.append(50, '_');
+    cout << '\n'
+         << stars << '\n'
+         << "Patient: " << fName << " "
+         << lName << "\n"
+         << "Patient ID: " << ID << '\n'
+         << "Attending Physician: Dr."
          << attendingPhysicain.getFirstName() << " "
-         << attendingPhysicain.getLastName() << " "
-         << attendingPhysicain.getSpecialty() << " "
+         << attendingPhysicain.getLastName() << "; Specialty: "
+         << attendingPhysicain.getSpecialty() << '\n'
+         << lines << '\n'
          << '\n';
 }
 // Function to check patientID; It has totally 6 characters;
