@@ -19,7 +19,7 @@ check the sample output for reference
 // have to be initialized; no need to initialize pType here
 billType::billType()
 {
-    ID = "a12345";
+    ID = "A12345";
     pharmacyCharges = 0.0;
     roomRent = 0.0;
     doctorFee = 0.0;
@@ -68,6 +68,7 @@ string billType::getID()
 // roomRent, doctorFee and finally total charges
 void billType::printBill()
 {
+    pType.print();
     cout << pType.getFirstName() << " "
          << pType.getLastName() << " "
          << pharmacyCharges << " "
