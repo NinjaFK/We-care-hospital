@@ -14,6 +14,7 @@ check the sample output for reference
 */
 #include <iostream>
 #include "patientType.h"
+//"A12345", "first", "last", 1, 1, 1910, "docf", "docl", "spl"
 
 // Parameterized Constructor
 // The patient details like ID, first name, last name,
