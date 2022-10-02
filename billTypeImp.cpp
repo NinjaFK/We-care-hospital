@@ -36,7 +36,7 @@ billType::billType(string id, double phCharges, double rRent,
     pharmacyCharges = phCharges;
     roomRent = rRent;
     doctorFee = docFee;
-    pType = patientObj;
+    pType = patientType(patientObj);
 }
 // Function to setInfo of a bill
 // The member variables ID, pharmacyCharges, roomRent, doctorFee,
