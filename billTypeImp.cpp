@@ -30,13 +30,12 @@ billType::billType()
 // are set according to the parameters.
 // Also set pType with patientObj
 billType::billType(string id, double phCharges, double rRent,
-                   double docFee, patientType patientObj)
+                   double docFee, patientType patientObj) : pType(patientObj)
 {
     ID = id;
     pharmacyCharges = phCharges;
     roomRent = rRent;
     doctorFee = docFee;
-    pType = patientType(patientObj);
 }
 // Function to setInfo of a bill
 // The member variables ID, pharmacyCharges, roomRent, doctorFee,
@@ -69,21 +68,28 @@ string billType::getID()
 // roomRent, doctorFee and finally total charges
 void billType::printBill()
 {
-    string stars;
-    stars.append(65, '*');
-    pType.print();
-    cout << setprecision(2) << fixed
-         << "Billing Charges for ID: "
-         << ID << '\n'
-         << "Pharmacy Charges: "
-         << pharmacyCharges << '\n'
-         << "Room Charges:     "
-         << roomRent << '\n'
-         << "Doctor's Fees:    "
-         << doctorFee << '\n'
-         << "______________________________" << '\n'
-         << "Total Charges:    "
-         << billingAmount() << '\n'
-         << '\n'
-         << stars << '\n';
+    if ((ID == pType.getID() && pType.checkPatientID(ID)) || pType.getID() == "")
+    {
+        string stars;
+        stars.append(65, '*');
+        pType.print();
+        cout << setprecision(2) << fixed
+             << "Billing Charges for ID: "
+             << ID << '\n'
+             << "Pharmacy Charges: "
+             << pharmacyCharges << '\n'
+             << "Room Charges:     "
+             << roomRent << '\n'
+             << "Doctor's Fees:    "
+             << doctorFee << '\n'
+             << "______________________________" << '\n'
+             << "Total Charges:    "
+             << billingAmount() << '\n'
+             << '\n'
+             << stars << '\n';
+    }
+    else
+    {
+        cout << "ID mismatch or Invalid ID is passed; ID from BillType: " << ID << '\n';
+    }
 }
