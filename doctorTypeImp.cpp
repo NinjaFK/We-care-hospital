@@ -19,6 +19,10 @@ check the sample output for reference
 doctorType::doctorType(string first, string last, string spl)
 {
     setName(first, last);
+    if (spl == "")
+    {
+        cout << "Specialty is missing for Dr." << first << '\n';
+    }
     specialty = spl;
 }
 // Function to set specialty according to the parameters.
@@ -36,5 +40,5 @@ void doctorType::print() const
 {
     string fName = getFirstName();
     string lName = getLastName();
-    cout << fName << ", " << lName << specialty << '\n';
+    cout << fName << ", " << lName << "; Specialty: " << specialty;
 }
