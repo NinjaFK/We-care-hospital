@@ -25,10 +25,6 @@ patientType::patientType(string id, string fName, string lName,
                          string docFrName, string docLaName, string docSpl)
 {
     // checks if id is vaild and if not it says who
-    if (!checkPatientID(id))
-    {
-        cout << "Error: " << id << "  is invalid patientID for " << fName << '\n';
-    }
     ID = id;
     setName(fName, lName);
     if (bMth < 1 || bMth > 12)
@@ -41,6 +37,14 @@ patientType::patientType(string id, string fName, string lName,
     }
     dateOfBirth = dateType(bMth, bDay, bYear);
     // checks if docpl has a value
+    if (docSpl == "")
+    {
+        cout << "Specialty is missing for Dr." << docFrName << '\n';
+    }
+    if (!checkPatientID(id))
+    {
+        cout << "Error: " << id << " is invalid patientID for " << fName << '\n';
+    }
     if (docSpl == "")
     {
         cout << "Doctor Specialty is missing for patient " << fName << '\n';
@@ -103,7 +107,7 @@ void patientType::setBirthDate(int bDay, int bMth, int bYear)
     }
     if (bYear < 1910 || bYear > 2022)
     {
-        cout << "Error: Invalid setyear entry for " << getFirstName() << '\n';
+        cout << "Error: Invalid year entry for " << getFirstName() << '\n';
     }
     dateOfBirth.setDate(bMth, bDay, bYear);
 }
