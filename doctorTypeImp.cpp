@@ -40,5 +40,5 @@ void doctorType::print() const
 {
     string fName = getFirstName();
     string lName = getLastName();
-    cout << fName << ", " << lName << "; Specialty: " << specialty;
+    cout << "Dr." << fName << lName << "; Specialty: " << specialty;
 }
