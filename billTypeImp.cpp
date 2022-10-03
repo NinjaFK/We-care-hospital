@@ -30,7 +30,8 @@ billType::billType()
 // are set according to the parameters.
 // Also set pType with patientObj
 billType::billType(string id, double phCharges, double rRent,
-                   double docFee, patientType patientObj) : pType(patientObj)
+                   double docFee, patientType patientObj)
+    : pType(patientObj)
 {
     ID = id;
     pharmacyCharges = phCharges;
@@ -68,28 +69,50 @@ string billType::getID()
 // roomRent, doctorFee and finally total charges
 void billType::printBill()
 {
-    if ((ID == pType.getID() && pType.checkPatientID(ID)) || pType.getID() == "")
+    // checks if pType's id is vaild and exists
+    if ((ID == pType.getID() 
+            && pType.checkPatientID(ID)) 
+            || pType.getID() == "")
     {
         string stars;
         stars.append(65, '*');
-        pType.print();
+        string lines;
+        lines.append(50, '_');
+        if (pType.getID() == "")
+        {
+            cout << '\n'
+                 << stars << '\n'
+                 << '\n'
+                 << "Patient: " << '\n'
+                 << "Patient ID: "
+                 << ID << '\n'
+                 << "Attending Physician: Dr. ; Specialty: " << '\n'
+                 << lines << '\n'
+                 << '\n';
+        }
+        else
+        {
+            pType.print();
+        }
         cout << setprecision(2) << fixed
              << "Billing Charges for ID: "
              << ID << '\n'
-             << "Pharmacy Charges: "
+             << "Pharmacy Charges: $"
              << pharmacyCharges << '\n'
-             << "Room Charges:     "
+             << "Room Charges:     $"
              << roomRent << '\n'
-             << "Doctor's Fees:    "
+             << "Doctor's Fees:    $"
              << doctorFee << '\n'
              << "______________________________" << '\n'
-             << "Total Charges:    "
+             << "Total Charges:    $"
              << billingAmount() << '\n'
              << '\n'
              << stars << '\n';
     }
     else
     {
-        cout << "ID mismatch or Invalid ID is passed; ID from BillType: " << ID << '\n';
+        cout << "ID mismatch or Invalid ID"
+             << " is passed; ID from BillType: "
+             << ID << '\n';
     }
 }
