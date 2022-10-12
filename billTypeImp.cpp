@@ -13,7 +13,6 @@ missing specialty, invalid biryh month and year;
 check the sample output for reference
 */
 #include <iostream>
-#include <iomanip>
 #include "billType.h"
 // Default Constructor
 // The member variables ID, pharmacyCharges, roomRent, doctorFee,
@@ -71,8 +70,8 @@ void billType::printBill()
 {
     // checks if pType's id is vaild and exists
     if ((ID == pType.getID() 
-            && pType.checkPatientID(ID)) 
-            || pType.getID() == "")
+    && pType.checkPatientID(ID)) 
+    || pType.getID() == "")
     {
         string stars;
         stars.append(65, '*');
@@ -94,7 +93,8 @@ void billType::printBill()
         {
             pType.print();
         }
-        cout << setprecision(2) << fixed
+        cout.precision(2);
+        cout << fixed
              << "Billing Charges for ID: "
              << ID << '\n'
              << "Pharmacy Charges: $"
